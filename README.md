@@ -1,13 +1,13 @@
 # Project Name
 
-> Project description
+> Yelp restaurant page build
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/team419/photo-gallery-module
+  - https://github.com/team419/title-map-header-module
+  - https://github.com/team419/reservations-module
+  - https://github.com/team419/comments-module
 
 ## Table of Contents
 
