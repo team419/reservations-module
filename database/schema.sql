@@ -26,7 +26,7 @@ CREATE TABLE reservations (
   month int NOT NULL,
   year int NOT NULL,
   time int NOT NULL,
-  numofpeopel int NOT NULL,
+  numofpeople int NOT NULL,
   restaurants_id int NOT NULL,
   PRIMARY KEY (ID)
 );
