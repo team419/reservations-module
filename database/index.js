@@ -62,10 +62,19 @@ restaurants.sync();
 openhours.sync();
 reservations.sync();
 
-// const sync = sequelize.sync({ force: true });
+const getRestaurants = (resId, callback) => {
+  restaurants.findAll({
+    where: {
+      id: resId,
+    },
+  }).then((result) => {
+    callback(result);
+  });
+};
 
 module.exports = {
   restaurants,
   openhours,
   reservations,
+  getRestaurants,
 };

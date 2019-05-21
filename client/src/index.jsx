@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Calendar from './components/Calendar.jsx';
-import Time from './components/Time.jsx';
-import People from './components/People.jsx';
+import Reservation from './components/Reservation/Reservation.jsx';
+import ReservationSticky from './components/Reservation/ReservationSticky.jsx';
+import Order from './components/Order/Order.jsx';
+import BusinessInfo from './components/BusinessInfo/BusinessInfo.jsx';
+import Hours from './components/Hours/Hours.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,16 +15,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="island-item">
-        <h3>Make a Reservation</h3>
-        <form className="reservation-availability-search-form">
-          <ul>
-            <li><Calendar /></li>
-            <li><Time /></li>
-            <li><People /></li>
-          </ul>
-          <button type="submit">Find a Table</button>
-        </form>
+      <div className="column column-beta sidebar">
+        <Reservation />
+        <ReservationSticky />
+        <Order />
+        <BusinessInfo />
+        <Hours />
       </div>
     );
   }
