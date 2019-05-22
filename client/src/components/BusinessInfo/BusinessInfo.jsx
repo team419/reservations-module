@@ -24,11 +24,11 @@ class BusinessInfo extends React.Component {
                   <dd>
                     <strong className="u-space-r-half">
                       <span className="nowrap">8:00 am</span>
-                      -
+                      {' - '}
                       <span className="nowrap">2:30 pm</span>
                       <br />
                       <span className="nowrap">5:00 pm</span>
-                      -
+                      {' - '}
                       <span className="nowrap">10:00 pm</span>
                     </strong>
                     <span className="nowrap extra open">Open now</span>

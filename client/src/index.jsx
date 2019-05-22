@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Reservation from './components/Reservation/Reservation.jsx';
-import ReservationSticky from './components/Reservation/ReservationSticky.jsx';
+import ReservationTop from './components/Reservation/ReservationTop.jsx';
 import Order from './components/Order/Order.jsx';
 import BusinessInfo from './components/BusinessInfo/BusinessInfo.jsx';
 import Hours from './components/Hours/Hours.jsx';
@@ -15,12 +15,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="column column-beta sidebar">
-        <Reservation />
-        <ReservationSticky />
-        <Order />
-        <BusinessInfo />
-        <Hours />
+      <div>
+        {/* <ReservationTop /> */}
+        <div className="column column-beta sidebar">
+          <Reservation />
+          <Order />
+          <BusinessInfo />
+          <Hours />
+        </div>
       </div>
     );
   }

@@ -19,9 +19,9 @@ class Reservation extends React.Component {
         </h3>
         <div className="make-reservation-form-container">
           <form className="reservation-availability-search-form" name="reservation-availability-search-form">
-            <ul className="inline-layout reservation-fields clearfix">
+            <ul className="reservation-fields clearfix">
               <Calender />
-              <div className="box">
+              <div className="box inline-layout">
                 <Time />
                 <People />
               </div>

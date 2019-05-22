@@ -20,5 +20,19 @@ module.exports = {
     "react"
   ],
   "rules": {
+    'no-console': 'warn',
+    'comma-dangle': 'off',
+    'no-plusplus': 'off',
+    'func-names': 'off',
+    'no-unused-vars': [
+      'warn',
+      {
+        'vars': 'local',
+        'args': 'none'
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": 0,
+    "object-curly-newline": 0
   }
 };
