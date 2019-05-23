@@ -1,80 +1,52 @@
-const Sequelize = require('sequelize');
+const mongoose = require('mongoose');
 
-const sequelize = new Sequelize('yelp', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql',
+const { restaurantGenerator } = require('./restaurantGenerator');
+
+mongoose.connect('mongodb://localhost:27017/restaurant_info', { useNewUrlParser: true });
+
+const restaurantSchema = mongoose.Schema({
+  res_id: Number,
+  name: String,
+  max_guest: Number,
+  hours: {
+    Monday: { opentime: Number, closetime: Number },
+    Tuesday: { opentime: Number, closetime: Number },
+    Wednesday: { opentime: Number, closetime: Number },
+    Thursday: { opentime: Number, closetime: Number },
+    Friday: { opentime: Number, closetime: Number },
+    Saturday: { opentime: Number, closetime: Number },
+    Sunday: { opentime: Number, closetime: Number },
+  },
+  reservations: [{
+    date: Date,
+    time: Number,
+    numofguest: Number,
+  }],
 });
 
-sequelize.authenticate()
+const Restaurants = mongoose.model('restaurants', restaurantSchema);
+
+Restaurants.collection.drop(() => { });
+
+const arrayOfReservations = restaurantGenerator();
+
+Restaurants.insertMany(arrayOfReservations)
   .then(() => {
-    console.log('Connection has been established successfully.');
+    console.log('updated');
   })
-  .catch((err) => {
-    console.log('Unable to connect to the database:', err);
+  .catch(() => {
+    console.log('fail');
   });
 
-const restaurants = sequelize.define('restaurants', {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  name: Sequelize.STRING,
-  maxguest: Sequelize.INTEGER,
-});
 
-const openhours = sequelize.define('openhours', {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  opentime: Sequelize.INTEGER,
-  closetime: Sequelize.INTEGER,
-  restaurants_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: 'restaurants',
-      key: 'id',
-    },
-  },
-});
+// const getAllRestaurant = id => new Promise((resolve, reject) => {
+//   Restaurants.find({ id }, (err, doc) => {
+//     if (err) {
+//       reject(err);
+//     } else {
+//       resolve(doc);
+//     }
+//   });
+// });
 
-const reservations = sequelize.define('reservations', {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
-  },
-  date: Sequelize.DATE,
-  time: Sequelize.DATE,
-  numofguest: Sequelize.INTEGER,
-  restaurants_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: 'restaurants',
-      key: 'id',
-    },
-  },
-});
-
-restaurants.sync();
-openhours.sync();
-reservations.sync();
-
-const getRestaurants = (resId, callback) => {
-  restaurants.findAll({
-    where: {
-      id: resId,
-    },
-  }).then((result) => {
-    callback(result);
-  });
-};
-
-module.exports = {
-  restaurants,
-  openhours,
-  reservations,
-  getRestaurants,
-};
+// module.exports = { getAllRestaurant };
