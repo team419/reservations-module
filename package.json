@@ -29,17 +29,22 @@
     "body-parse": "^0.1.0",
     "body-parser": "^1.19.0",
     "casual": "^1.6.0",
+    "chai": "^4.2.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "faker": "^4.1.0",
+    "jquery": "^3.4.1",
     "mongoose": "^5.5.10",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.19.0",
     "path": "^0.12.7",
     "react": "^16.8.6",
+    "react-calendar": "^2.19.0",
     "react-dom": "^16.8.6",
     "sequelize": "^5.8.6",
+    "sinon": "^7.3.2",
+    "styled-components": "^4.2.0",
     "stylelint": "^10.0.1"
   },
   "devDependencies": {
@@ -47,6 +52,7 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.1",
     "eslint": "^5.16.0",
@@ -61,6 +67,7 @@
     "lint-staged": "^8.1.7",
     "pre-commit": "^1.2.2",
     "puppeteer": "^1.16.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2"
   }

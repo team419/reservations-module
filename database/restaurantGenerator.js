@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const faker = require('faker');
 
 const { reservationGenerator } = require('./reservationGenerator');
@@ -16,17 +17,14 @@ const restaurantGenerator = () => {
     const max_guest = faker.random.number({ min: 50, max: 200 });
     data.max_guest = max_guest;
 
-    const open = faker.random.number({ min: 8, max: 11 });
-    const close = faker.random.number({ min: 21, max: 23 });
+    const amopen = faker.random.number({ min: 7, max: 11 });
+    const amclose = faker.random.number({ min: 12, max: 15 });
+    const pmopen = faker.random.number({ min: 15, max: 18 });
+    const pmclose = faker.random.number({ min: 20, max: 23 });
 
     const hours = {
-      Monday: { opentime: open, closetime: close },
-      Tuesday: { opentime: open, closetime: close },
-      Wednesday: { opentime: open, closetime: close },
-      Thursday: { opentime: open, closetime: close },
-      Friday: { opentime: open, closetime: close },
-      Saturday: { opentime: open, closetime: close },
-      Sunday: { opentime: open, closetime: close },
+      morning: { opentime: amopen, closetime: amclose, },
+      afternoon: { opentime: pmopen, closetime: pmclose, },
     };
 
     data.hours = hours;

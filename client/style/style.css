@@ -1,45 +1,8 @@
-body {
-  font-size: 14px;
-  line-height: 1.28571em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-h3 {
-  display: block;
-  font-size: 1.17em;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-
-.sidebar {
+.side-bar-on-the-page {
   float: right;
 }
 
-div {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-div.sidebar {
+div.side-bar-on-the-page {
   padding: 15px;
   min-height: 1px;
   -webkit-box-sizing: border-box;
@@ -49,12 +12,7 @@ div.sidebar {
   width: 333px;
 }
 
-.reservation-input {
-  /* border: 1px solid #ccc; */
-  /* background-color: red; */
-}
-
-.inline-layout>li {
+.inline-layout > li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -64,14 +22,12 @@ div.sidebar {
   vertical-align: top;
   font-size: 14px;
   line-height: 1.28571em;
-  width: 50%;
-  /* padding: 0 3px; */
-  margin: 3px 0;
 }
 
 input.date-input {
   border: none;
   width: 80%;
+  cursor: pointer;
 }
 
 div.island {
@@ -101,15 +57,6 @@ div.island {
   position: relative;
 }
 
-select {
-  border: none;
-  background-color: white;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 80%;
-}
-
 .yselect_arrow {
   position: absolute;
   right: 10px;
@@ -127,7 +74,7 @@ select {
   margin: 3px 0;
 }
 
-.box {
+.tp-box {
   display: flex;
   flex-wrap: wrap;
 }
@@ -208,18 +155,6 @@ a.ybtn {
   text-align: center !important;
 }
 
-h4 {
-  word-wrap: break-word !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-  font-weight: bold;
-  margin-bottom: 0px;
-  margin-top: 10px;
-  font-size: 14px;
-  line-height: 1.28571em;
-  color: #333;
-}
-
 .u-hidden {
   text-align: center;
 }
@@ -246,20 +181,6 @@ div.summary {
   text-align: center;
 }
 
-dt,
-dd {
-  display: inline;
-  margin-inline-start: 0;
-}
-
-dl {
-  display: block;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
 .iconed-list li:last-child .iconed-list-story {
   border-bottom: none;
 }
@@ -277,21 +198,21 @@ dl {
   margin-right: 5px !important;
 }
 
-.sidebar .biz-hours .open {
+.side-bar-on-the-page .biz-hours .open {
   color: #41a700;
 }
 
-.sidebar .biz-hours .extra {
+.side-bar-on-the-page .biz-hours .extra {
   max-width: 70px;
 }
 
-.sidebar .extra {
+.side-bar-on-the-page .extra {
   font-size: 12px;
   font-weight: bold;
   color: #41a700;
 }
 
-.sidebar .bordered-rail {
+.side-bar-on-the-page .bordered-rail {
   padding-left: 30px;
   border-left: 1px solid #e6e6e6;
 }
@@ -308,7 +229,7 @@ dl {
   margin-bottom: 12px;
 }
 
-.sidebar .biz-hours th {
+.side-bar-on-the-page .biz-hours th {
   min-width: 36px;
   padding-right: 18px;
 }
@@ -325,7 +246,7 @@ dl {
   text-align: left;
 }
 
-.sidebar .biz-hours .hours-table {
+.side-bar-on-the-page .biz-hours .hours-table {
   margin-bottom: 6px;
 }
 
@@ -352,8 +273,10 @@ dl {
   color: #999 !important;
 }
 
-small {
-  font-size: 12px;
-  margin-bottom: 0.5em;
-  display: block;
+.close-status {
+  color: #d32323 !important;
+}
+
+.open-status {
+  color: #41a700 !important;
 }
