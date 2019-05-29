@@ -17,7 +17,7 @@ class Reservation extends React.Component {
   }
 
   componentDidMount() {
-    const modal = $('.modal');
+    const modal = $('.modal-modal');
     $('.show-modal').click(() => {
       modal.fadeIn();
     });

@@ -31,7 +31,7 @@ class Modal extends React.Component {
       return (
 
         <div className="container-confirm">
-          <div className="modal">
+          <div className="modal-modal">
             <button className="close-modal" href="#" onClick={this.renderReview} type="button">X</button>
             <div className="confirm-box">
 
@@ -45,8 +45,8 @@ class Modal extends React.Component {
     }
     if (step === 0) {
       return (
-        <div className="container">
-          <div className="modal">
+        <div className="modal-container">
+          <div className="modal-modal">
             <a className="atag close-modal" href="#">X</a>
             <h2 className="title-style">Confirm Reservation</h2>
             <div className="modal-detail">
@@ -97,10 +97,10 @@ class Modal extends React.Component {
               </form>
               <p className="tip">
                 You’ll receive texts about your restaurant visit. By continuing below, you agree to Yelp’s
-                <a href="#" className="atag linkinfoot">Terms of Service</a>
+                <a href="#" className="atag linkinfoot"> Terms of Service </a>
                 and
-                <a href="#" className="atag linkinfoot">Privacy Policy</a>
-                .We’ll send your name, mobile number, and notes to the restaurant.
+                <a href="#" className="atag linkinfoot"> Privacy Policy</a>
+                . We’ll send your name, mobile number, and notes to the restaurant.
               </p>
 
               <p className="tip">

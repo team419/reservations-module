@@ -1,6 +1,6 @@
-ul {
+/* ul {
   list-style-type: none;
-}
+} */
 .left {
   position: absolute;
   top: 13px;
@@ -22,10 +22,10 @@ div.topgroup {
   margin-bottom: 3em;
   position: relative;
 }
-
+/* 
 button {
   outline: none;
-}
+} */
 
 .topgroup .monthname {
   margin: 0;
