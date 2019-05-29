@@ -22,11 +22,11 @@ class Time extends React.Component {
         const slotList = [];
         for (let i = 0; i < amtimeLength; i++) {
           slotList.push(<option value={`${amOpenTime}00`}>{`${amOpenTime + i}:00`}</option>);
-          slotList.push(<option value={`${amOpenTime}30`}>{`${amOpenTime + 1}:30`}</option>);
+          slotList.push(<option value={`${amOpenTime}30`}>{`${amOpenTime + i}:30`}</option>);
         }
         for (let i = 0; i < pmtimeLength; i++) {
           slotList.push(<option value={`${pmOpenTime}00`}>{`${pmOpenTime + i}:00`}</option>);
-          slotList.push(<option value={`${pmOpenTime}30`}>{`${pmOpenTime + i}:00`}</option>);
+          slotList.push(<option value={`${pmOpenTime}30`}>{`${pmOpenTime + i}:30`}</option>);
         }
         return slotList;
       };

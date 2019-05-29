@@ -47,7 +47,7 @@ class Modal extends React.Component {
       return (
         <div className="container">
           <div className="modal">
-            <a className="close-modal" href="#">X</a>
+            <a className="atag close-modal" href="#">X</a>
             <h2 className="title-style">Confirm Reservation</h2>
             <div className="modal-detail">
               <div className="res-detail">
@@ -58,7 +58,7 @@ class Modal extends React.Component {
                 <div className="detail-section section-right">
 
                   <h2 className="title-style res-name">{restaurant.name}</h2>
-                  <div className="edit-caption"><a className="linkinfoot">Edit Details</a></div>
+                  <div className="edit-caption"><a className="atag linkinfoot">Edit Details</a></div>
                   <div className="res-item time-chosen">
                     <span className="svg-icon">
                       <i className="far fa-calendar-minus" />
@@ -97,9 +97,9 @@ class Modal extends React.Component {
               </form>
               <p className="tip">
                 You’ll receive texts about your restaurant visit. By continuing below, you agree to Yelp’s
-                <a href="#" className="linkinfoot">Terms of Service</a>
+                <a href="#" className="atag linkinfoot">Terms of Service</a>
                 and
-                <a href="#" className="linkinfoot">Privacy Policy</a>
+                <a href="#" className="atag linkinfoot">Privacy Policy</a>
                 .We’ll send your name, mobile number, and notes to the restaurant.
               </p>
 
@@ -118,7 +118,7 @@ class Modal extends React.Component {
     if (step === 2) {
       return (
         <div className="review-append">
-          <h4>Upcoming Reservations</h4>
+          <h4 className="h4element">Upcoming Reservations</h4>
           <div className="review-detail">May 29 · 19:30 · 3 people</div>
         </div>
       );

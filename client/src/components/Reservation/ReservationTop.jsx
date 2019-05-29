@@ -3,6 +3,8 @@ import Calendar from './Calendar.jsx';
 import People from './People.jsx';
 import Time from './Time.jsx';
 
+import cssSticky from '../../../style/sticky.css';
+
 class ReservationTop extends React.Component {
   constructor(props) {
     super(props);
@@ -16,11 +18,12 @@ class ReservationTop extends React.Component {
   }
 
   render() {
+    const { restaurant } = this.props;
     return (
-      <div className="island reservations-sticky-bar--top reservations-sticky-bar hidden">
+      <div id="reservations-sticky-bar" className="island reservations-sticky-bar--top reservations-sticky-bar hidden">
         <div className="make-reservation-form-container">
           <form className="reservation-availability-search-form" name="reservation-availability-search-form">
-            <ul className="inline-layout reservation-fields clearfix reservations-top">
+            <ul className="ulelement inline-layout reservation-fields clearfix reservations-top">
               <li className="date-picker js-data-picker yform" onClick={this.onCalendar}>
                 <div className="yselect">
                   <span className="svg-icon">
@@ -32,10 +35,10 @@ class ReservationTop extends React.Component {
                   </span>
                 </div>
               </li>
-              <Time />
+              <Time restaurant={restaurant} />
               <People />
               <li>
-                <a href="https://www.yelp.com/reservations/surisan-san-francisco?source=yelp_biz" className="ybtn ybtn--small ybtn--green ybtn-full">
+                <a href="https://www.yelp.com/reservations/surisan-san-francisco?source=yelp_biz" className="atag ybtn ybtn--small ybtn--green ybtn-full">
                   Find a Table
                 </a>
               </li>

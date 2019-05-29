@@ -8,11 +8,11 @@ import Order from './components/Order/Order.jsx';
 import BusinessInfo from './components/BusinessInfo/BusinessInfo.jsx';
 import Hours from './components/Hours/Hours.jsx';
 
-import style1 from '../style/style.css';
-import style2 from '../style/calendar.css';
-import style3 from '../style/modal.css';
-import style4 from '../style/table.css';
-import style5 from '../style/sticky.css';
+import cssOverall from '../style/overall.css';
+import cssStyle from '../style/style.css';
+import cssSticky from '../style/sticky.css';
+import cssModal from '../style/modal.css';
+import cssTable from '../style/table.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,6 +30,7 @@ class App extends React.Component {
         this.setState({
           restaurant: (data.data)[0],
         });
+        this.topsticker();
         console.log('DATA: ', data);
       })
       .catch((err) => {
@@ -39,9 +40,9 @@ class App extends React.Component {
 
   topsticker() {
     const header = $(".reservations-sticky-bar");
+    console.log(header);
     $(window).scroll(() => {
       const scroll = $(window).scrollTop();
-
       if (scroll >= 240) {
         header.removeClass('hidden');
       } else {
@@ -56,10 +57,9 @@ class App extends React.Component {
       console.log(restaurant);
       return (
         <div>
-          {this.topsticker()}
-          <ReservationTop />
-          <div className="column column-beta sidebar">
-            <h3>{restaurant.name}</h3>
+          <ReservationTop restaurant={restaurant} />
+          <div className="side-bar-on-the-page">
+            <h3 className="h3element">{restaurant.name}</h3>
             <Reservation restaurant={restaurant} />
             <Order />
             <BusinessInfo restaurant={restaurant} />

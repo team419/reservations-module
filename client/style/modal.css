@@ -125,12 +125,6 @@ p.tip {
   color: #666;
 }
 
-label {
-  display: block;
-  font-weight: 700;
-  margin: 0 0 6px;
-}
-
 div.input-detail {
   -webkit-box-flex: 1;
   flex: 1;

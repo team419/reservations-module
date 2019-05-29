@@ -10,9 +10,9 @@ class Order extends React.Component {
   render() {
     return (
       <div className="island">
-        <h3 className="reservations-title reservation-header-black">
+        <h3 className="h3element reservations-title reservation-header-black">
           <span className="svg-icon"><i className="fas fa-truck-pickup" /></span>
-          <a href="https://www.yelp.com/reservations/surisan-san-francisco?source=yelp_biz">Order Food</a>
+          <a href="https://www.yelp.com/reservations/surisan-san-francisco?source=yelp_biz" className="atag">Order Food</a>
         </h3>
         <div className="make-reservation-form-container">
           <form className="reservation-availability-search-form" name="reservation-availability-search-form">
@@ -22,7 +22,7 @@ class Order extends React.Component {
                 <b> 54 minutes</b>
               </span>
             </small>
-            <a href="https://www.yelp.com/reservations/surisan-san-francisco?source=yelp_biz" className="ybtn ybtn--small ybtn--green ybtn-full">
+            <a href="https://www.yelp.com/reservations/surisan-san-francisco?source=yelp_biz" className="atag ybtn ybtn--small ybtn--green ybtn-full">
               Start Order
             </a>
           </form>

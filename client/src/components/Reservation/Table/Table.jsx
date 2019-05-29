@@ -84,7 +84,7 @@ class Table extends React.Component {
           <button className="left pointer minusmonth">&laquo;</button>
           <button className="right pointer addmonth">&raquo;</button>
         </div>
-        <ul className="group">
+        <ul className="ulelement group">
           <li className="weekday">S</li>
           <li className="weekday">M</li>
           <li className="weekday">T</li>

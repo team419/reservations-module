@@ -92,13 +92,13 @@ class Hours extends React.Component {
     return (
       <div className="bordered-rail">
         <div className="ywidget biz-hours">
-          <h3>Hours</h3>
+          <h3 className="h3element">Hours</h3>
           <table className="table table-simple hours-table">
             <tbody>
               {this.renderHoursTable()}
             </tbody>
           </table>
-          <a href="/biz_attribute?biz_id=i09UMzccKgyLwGYKDVP28w">
+          <a href="/biz_attribute?biz_id=i09UMzccKgyLwGYKDVP28w" className="atag">
             <span className="svg-icon">
               <i className="fas fa-pencil-alt" />
             </span>
@@ -107,8 +107,8 @@ class Hours extends React.Component {
 
         </div>
         <div className="ywidget">
-          <h3>More business info</h3>
-          <ul className="ylist">
+          <h3 className="h3element">More business info</h3>
+          <ul className="ulelement ylist">
             <li>
               <div className="short-def-list">
                 <dl>

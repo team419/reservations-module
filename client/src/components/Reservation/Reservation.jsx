@@ -36,26 +36,26 @@ class Reservation extends React.Component {
     if (restaurant) {
       return (
         <div className="island">
-          <h3 className="reservations-title reservation-header-black show-modal open-modal" onClick={this.popupModal}>
+          <h3 className="h3element reservations-title reservation-header-black show-modal open-modal" onClick={this.popupModal}>
             <span className="svg-icon"><i className="far fa-calendar-minus" /></span>
-            <a href="#" >Make a Reservation</a>
+            <a href="#" className="atag">Make a Reservation</a>
           </h3>
           <div className="make-reservation-form-container">
             <form className="reservation-availability-search-form" name="reservation-availability-search-form">
-              <ul className="reservation-fields clearfix">
+              <ul className="ulelement reservation-fields clearfix">
                 <Calendar
                   onChange={this.onChange}
                   value={this.state.date} />
-                <div className="box inline-layout">
+                <div className="tp-box inline-layout">
                   <Time restaurant={restaurant} />
                   <People />
                 </div>
               </ul>
-              <a className="ybtn ybtn--small ybtn--green ybtn-full show-modal open-modal" onClick={this.popupModal}>
+              <a className="atag ybtn ybtn--small ybtn--green ybtn-full show-modal open-modal" onClick={this.popupModal}>
                 Find a Table
               </a>
             </form>
-            <h4 id="widget_motivational_content" className="reservations-title reservation-header-black motivational-content u-text-centered">
+            <h4 id="widget_motivational_content" className="h4element reservations-title reservation-header-black motivational-content u-text-centered">
               <span className="svg-icon"><i className="fas fa-bolt" /></span>
               Only 3 time slots left!
             </h4>

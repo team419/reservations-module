@@ -53,7 +53,7 @@ class BusinessInfo extends React.Component {
       return (
         <div className="island summary">
           <div className="make-reservation-form-container">
-            <ul className="iconed-list">
+            <ul className="ulelement iconed-list">
               <li>
                 <div className="iconed-list-avatar">
                   <span className="svg-icon color-clock">
@@ -85,7 +85,7 @@ class BusinessInfo extends React.Component {
                   </span>
                 </div>
                 <div className="iconed-list-story">
-                  <b><a className="menu-explore js-menu-explore" href="/menu/surisan-san-francisco">Full menu</a></b>
+                  <b><a className="atag menu-explore js-menu-explore" href="/menu/surisan-san-francisco">Full menu</a></b>
                 </div>
               </li>
               <li>
@@ -112,7 +112,7 @@ class BusinessInfo extends React.Component {
                     <dl className="short-def-list">
                       <dt className="attribue-key">
                         <b>
-                          <a href="/inspections/surisan-san-francisco">Health Score</a>
+                          <a href="/inspections/surisan-san-francisco" className="atag">Health Score</a>
                         </b>
                       </dt>
                       <dd className="nowrap health-score-description">
