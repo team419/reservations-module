@@ -56,7 +56,12 @@ div.sidebar {
   /* background-color: red; */
 }
 
-.inline-layout>li {
+input,
+select {
+  outline: none;
+}
+
+.inline-layout > li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -66,14 +71,15 @@ div.sidebar {
   vertical-align: top;
   font-size: 14px;
   line-height: 1.28571em;
-  width: 50%;
+  /* width: 50%; */
   /* padding: 0 3px; */
-  margin: 3px 0;
+  /* margin: 3px 0; */
 }
 
 input.date-input {
   border: none;
   width: 80%;
+  cursor: pointer;
 }
 
 div.island {
@@ -358,4 +364,12 @@ small {
   font-size: 12px;
   margin-bottom: 0.5em;
   display: block;
+}
+
+.close-status {
+  color: #d32323 !important;
+}
+
+.open-status {
+  color: #41a700 !important;
 }

@@ -1,34 +1,31 @@
-div.reservations-sticky-bar--top {
+.reservations-sticky-bar--top {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 0;
   margin: 0;
   z-index: 10000;
-  box-shadow: 10px 5px 5px black;
-  /* visibility: hidden; */
+  box-shadow: 5px 2px 5px 1px #ccc;
 }
 
+.hidden {
+  visibility: hidden;
+  /* transition: visibility 1s; */
+}
 
 .reservations-top {
   display: flex;
 }
 
-/* .reservations-sticky-bar {
-  position: fixed;
-  z-index: 1017;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  border-radius: 0;
-  visibility: hidden;
-  background: #fff;
-  border-color: #bbb;
-} */
+.reservations-top {
+  padding: 0.5em 1.3em 0em 0.1em;
+}
 
-/* 
-.reservations-sticky-bar .reservation-fields {
-  margin: 0 -3px;
-  display: flex;
-} */
+.reservations-top > li {
+  display: inline;
+  zoom: 1;
+  vertical-align: top;
+  font-size: 14px;
+  width: 100%;
+  margin: 3px;
+}

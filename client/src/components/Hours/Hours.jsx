@@ -1,11 +1,92 @@
 import React from 'react';
+import $ from 'jquery';
 
 class Hours extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      status: 'close',
     };
   }
+
+  componentDidMount() {
+    this.openStatus();
+  }
+
+
+  addOpenNow(i, todayDay) {
+    if (i === (todayDay - 1)) {
+      return (
+        <span className="extra">
+          {this.renderStatus()}
+        </span>
+      );
+    }
+  }
+
+  openStatus() {
+    const { restaurant } = this.props;
+    if (restaurant) {
+      const today = new Date();
+      const rightnow = today.getHours();
+      const amOpentime = restaurant.hours.morning.opentime;
+      const amClosetime = restaurant.hours.morning.closetime;
+      const pmOpentime = restaurant.hours.afternoon.opentime;
+      const pmClosetime = restaurant.hours.afternoon.closetime;
+      const inRange = (rightnow <= amClosetime && rightnow >= amOpentime) || (rightnow <= pmClosetime && rightnow >= pmOpentime);
+      // console.log('inRange', inRange);
+      if (inRange) {
+        this.setState({
+          status: 'open',
+        });
+      } else {
+        this.setState({
+          status: 'close',
+        });
+      }
+    }
+  }
+
+  renderHoursTable() {
+    const { restaurant } = this.props;
+    const today = new Date();
+    const todayDay = today.getDay();
+
+    if (restaurant) {
+      const table = [];
+      const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+      for (let i = 0; i < 7; i++) {
+        table.push(
+          <tr>
+            <th scope="row">{weekdays[i]}</th>
+            <td>
+              <span className="nowrap">{`${restaurant.hours.morning.opentime}:00`}</span>
+              -
+          <span className="nowrap">{`${restaurant.hours.morning.closetime}:00`}</span>
+              <br />
+              <span className="nowrap">{`${restaurant.hours.afternoon.opentime}:00`}</span>
+              -
+          <span className="nowrap">{`${restaurant.hours.afternoon.closetime}:00`}</span>
+            </td>
+            {this.addOpenNow(i, todayDay)}
+          </tr>
+        )
+      }
+      return table;
+    }
+  }
+
+  renderStatus() {
+
+    if (this.state.status === "close") {
+      $('span.color-clock').addClass('close-status');
+      return <span className="close-status">Closed now</span>;
+    } else if (this.state.status === "open") {
+      $('span.color-clock').addClass('open-status');
+      return <span className="open-status">Open now</span>;
+    }
+  }
+
 
   render() {
     return (
@@ -14,111 +95,7 @@ class Hours extends React.Component {
           <h3>Hours</h3>
           <table className="table table-simple hours-table">
             <tbody>
-              <tr>
-                <th scope="row">Mon</th>
-                <td>
-                  <span className="nowrap">8:00 am</span>
-                  -
-                  <span className="nowrap">2:30 pm</span>
-                  <br />
-                  <span className="nowrap">5:00 pm</span>
-                  -
-                  <span className="nowrap">10:00 pm</span>
-                </td>
-                <td className="extra">
-                  <span className="nowrap open">Open now</span>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Tue</th>
-                <td>
-                  <span className="nowrap">8:00 am</span>
-                  -
-                  <span className="nowrap">2:30 pm</span>
-                  <br />
-                  <span className="nowrap">5:00 pm</span>
-                  -
-                  <span className="nowrap">10:00 pm</span>
-                </td>
-                <td className="extra">
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">Wed</th>
-                <td>
-                  <span className="nowrap">8:00 am</span>
-                  -
-                  <span className="nowrap">2:30 pm</span>
-                  <br />
-                  <span className="nowrap">5:00 pm</span>
-                  -
-                  <span className="nowrap">10:00 pm</span>
-                </td>
-                <td className="extra">
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">Thu</th>
-                <td>
-                  <span className="nowrap">8:00 am</span>
-                  -
-                  <span className="nowrap">2:30 pm</span>
-                  <br />
-                  <span className="nowrap">5:00 pm</span>
-                  -
-                  <span className="nowrap">10:00 pm</span>
-                </td>
-                <td className="extra">
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">Fri</th>
-                <td>
-                  <span className="nowrap">8:00 am</span>
-                  -
-                  <span className="nowrap">2:30 pm</span>
-                  <br />
-                  <span className="nowrap">5:00 pm</span>
-                  -
-                  <span className="nowrap">10:00 pm</span>
-                </td>
-                <td className="extra">
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">Sat</th>
-                <td>
-                  <span className="nowrap">8:30 am</span>
-                  -
-                  <span className="nowrap">3:00 pm</span>
-                  <br />
-                  <span className="nowrap">5:00 pm</span>
-                  -
-                  <span className="nowrap">10:00 pm</span>
-                </td>
-                <td className="extra">
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">Sun</th>
-                <td>
-                  <span className="nowrap">8:30 am</span>
-                  -
-                  <span className="nowrap">3:00 pm</span>
-                  <br />
-                  <span className="nowrap">5:00 pm</span>
-                  -
-                  <span className="nowrap">10:00 pm</span>
-                </td>
-                <td className="extra">
-                </td>
-              </tr>
-
+              {this.renderHoursTable()}
             </tbody>
           </table>
           <a href="/biz_attribute?biz_id=i09UMzccKgyLwGYKDVP28w">
@@ -368,3 +345,4 @@ class Hours extends React.Component {
 }
 
 export default Hours;
+

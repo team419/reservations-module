@@ -12,6 +12,7 @@ class People extends React.Component {
       <li className="people-picker yform">
         <span className="svg-icon"><i className="fas fa-user-ninja" /></span>
         <select className="reservation-input">
+          <option value="1">1 people</option>
           <option value="2">2 people</option>
           <option value="3">3 people</option>
           <option value="4">4 people</option>

@@ -9,16 +9,11 @@ const restaurantSchema = mongoose.Schema({
   name: String,
   max_guest: Number,
   hours: {
-    Monday: { opentime: Number, closetime: Number },
-    Tuesday: { opentime: Number, closetime: Number },
-    Wednesday: { opentime: Number, closetime: Number },
-    Thursday: { opentime: Number, closetime: Number },
-    Friday: { opentime: Number, closetime: Number },
-    Saturday: { opentime: Number, closetime: Number },
-    Sunday: { opentime: Number, closetime: Number },
+    morning: { opentime: Number, closetime: Number, },
+    afternoon: { opentime: Number, closetime: Number, },
   },
   reservations: [{
-    date: Date,
+    date: String,
     time: Number,
     numofguest: Number,
   }],
@@ -32,21 +27,20 @@ const arrayOfReservations = restaurantGenerator();
 
 Restaurants.insertMany(arrayOfReservations)
   .then(() => {
-    console.log('updated');
+    console.log('restaurants updated!');
   })
   .catch(() => {
-    console.log('fail');
+    console.log('got nothing!');
   });
 
+const fetch = (id, cb) => {
+  Restaurants.find({ res_id: id }, (err, restaurants) => {
+    if (err) {
+      console.log(err);
+    } else {
+      cb(restaurants);
+    }
+  });
+};
 
-// const getAllRestaurant = id => new Promise((resolve, reject) => {
-//   Restaurants.find({ id }, (err, doc) => {
-//     if (err) {
-//       reject(err);
-//     } else {
-//       resolve(doc);
-//     }
-//   });
-// });
-
-// module.exports = { getAllRestaurant };
+module.exports = { fetch };
