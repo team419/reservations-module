@@ -59,7 +59,6 @@ class App extends React.Component {
         <div>
           <ReservationTop restaurant={restaurant} />
           <div className="side-bar-on-the-page">
-            <h3 className="h3element">{restaurant.name}</h3>
             <Reservation restaurant={restaurant} />
             <Order />
             <BusinessInfo restaurant={restaurant} />
