@@ -88,3 +88,17 @@ label {
   font-weight: 700;
   margin: 0 0 6px;
 }
+
+.svg-24{
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  fill: #666;
+}
+
+.svg-18{
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  fill: #666;
+}
