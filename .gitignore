@@ -24,6 +24,5 @@ coverage
 build/
 dist/
 
-
 # vscode
 .vscode

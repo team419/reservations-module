@@ -12,7 +12,7 @@ const app = express();
 
 const db = require('../database/index.js');
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.use(bodyParser.json());
 app.use(cors());
