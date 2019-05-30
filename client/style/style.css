@@ -143,7 +143,7 @@ a.ybtn {
 }
 
 .svg-icon {
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
 }
 
 .reservations .motivational-content {
@@ -274,9 +274,18 @@ div.summary {
 }
 
 .close-status {
+  fill: #d32323 !important;
   color: #d32323 !important;
 }
 
 .open-status {
   color: #41a700 !important;
+  fill: #41a700 !important;
+}
+
+.price-range {
+  font-size: 13px;
+  line-height: 1.38462em;
+  font-weight: bold;
+  color: #41a700;
 }

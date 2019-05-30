@@ -37,7 +37,12 @@ class Reservation extends React.Component {
       return (
         <div className="island">
           <h3 className="h3element reservations-title reservation-header-black show-modal open-modal" onClick={this.popupModal}>
-            <span className="svg-icon"><i className="far fa-calendar-minus" /></span>
+            <span className="svg-icon">
+              <svg className="svg-24">
+                <path d="M18 21H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3 1 1 0 0 1 2 0h8a1 1 0 0 1 2 0 3 3 0 0 1 3 3v12a3 3 0 0 1-3 3zm1-13H5v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V8zm-6 5h4v4h-4v-4z">
+                </path>
+              </svg>
+            </span>
             <a href="#" className="atag">Make a Reservation</a>
           </h3>
           <div className="make-reservation-form-container">
