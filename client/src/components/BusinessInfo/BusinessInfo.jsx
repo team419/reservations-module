@@ -36,7 +36,7 @@ class BusinessInfo extends React.Component {
     }
   }
 
-  renderStatus() {
+  outputStatus() {
     if (this.state.status === "close") {
       $('span.color-clock').addClass('close-status');
       return <span className="close-status">Closed now</span>;
@@ -73,7 +73,7 @@ class BusinessInfo extends React.Component {
                         {' - '}
                         <span className="nowrap">{`${restaurant.hours.afternoon.closetime}:00`}</span>
                       </strong>
-                      <span className="nowrap extra">{this.renderStatus()}</span>
+                      <span className="nowrap extra">{this.outputStatus()}</span>
                     </dd>
                   </dl>
                 </div>
