@@ -1,6 +1,6 @@
-/* .side-bar-on-the-page {
+.side-bar-on-the-page {
   float: right;
-} */
+}
 
 div.side-bar-on-the-page {
   padding: 15px;
@@ -10,6 +10,7 @@ div.side-bar-on-the-page {
   box-sizing: border-box;
   width: 33.33333%;
   width: 333px;
+  height: 333vh;
 }
 
 .inline-layout > li {
